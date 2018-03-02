@@ -2,11 +2,9 @@
 using namespace std;
 
 void bsearch(int arr[],int lsize, int rsize, int key){
-	// Make a variable.
 	int mid = (lsize +rsize)/2;
-	// float mid;
-	if (key <= arr[rsize] && key >= arr[lsize]){
-		if(arr[mid] == key){
+	if (key <= arr[rsize] && key >= arr[lsize]){ //since array is sorted checks if key is in the array
+		if(arr[mid] == key){ //if key is in array locates the key
 			cout << "Found at " << mid << " in the sorted array";
 		}
 		else{
@@ -19,10 +17,10 @@ void bsearch(int arr[],int lsize, int rsize, int key){
 		}
 	}
 	else{
-		cout << "Not found";
+		cout << "-1";
 	}
 }
-void displayarr(int arr[], int n){
+void displayarr(int arr[], int n){ //function to display array
 	int i;
 	for (i = 0; i < n; ++i){
 		cout<<arr[i];
@@ -36,6 +34,7 @@ int main(){
 	int size = 5;
 	int n=size;
 	int i, j;
+	//sorts the array
 	for (i = 0; i < n; ++i){ //traverses array multiple times
 		for (j = 0; j < n-i-1; ++j){ //traverses the array
 			if (arr[j] > arr[j+1]){
